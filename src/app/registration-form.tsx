@@ -222,7 +222,7 @@ export default function Component() {
         {/* Header */}
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Iscrizione Utente</h1>
-          <p className="text-lg text-gray-600">Compila tutti i campi per completare l'iscrizione</p>
+          <p className="text-lg text-gray-600">Compila tutti i campi per completare l&apos;iscrizione</p>
         </div>
 
         {/* Messaggio */}
