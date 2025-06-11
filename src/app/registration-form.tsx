@@ -285,7 +285,7 @@ export default function Component() {
                 <DatePicker
                   id="data-nascita"
                   selected={dataNascita}
-                  onChange={(date) => setDataNascita(date)}
+                  onChange={(date: Date | null) => setDataNascita(date)}
                   locale={it}
                   dateFormat="dd/MM/yyyy"
                   showMonthDropdown
