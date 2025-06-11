@@ -132,3 +132,7 @@ input.uppercase-text::placeholder {
 body {
   background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
 }
+
+.react-datepicker-wrapper{
+  display: block !important;
+}
