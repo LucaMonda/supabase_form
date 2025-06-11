@@ -19,202 +19,199 @@ import "react-datepicker/dist/react-datepicker.css"
 
 
 export default function Component() {
-    /*const [nomeGenitore, setNomeGenitore] = useState("Luca")
-    const [cognomeGenitore, setCognomeGenitore] = useState("Mondaini")
-    const [nome, setNome] = useState("Luca")
-    const [cognome, setCognome] = useState("Mondaini")
-    const [natoA, setNatoA] = useState("Cesena")
-    const [dataNascita, setDataNascita] = useState<Date>(new Date())
-    const [cittaResidenza, setCittaResidenza] = useState("Cesena")
-    const [viaResidenza, setViaResidenza] = useState("Via Fiorenzuola")
-    const [numeroResidenza, setNumeroResidenza] = useState("1107")
-    const [codiceFiscale, setCodiceFiscale] = useState("MNDLCU96P23C573M")
-    const [permessoAutonomo, setPermessoAutonomo] = useState(true)
-    const [deleghe, setDeleghe] = useState([{ name: "Delegato", phone: "123" }])
-    const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
-    const [contatti, setContatti] = useState([{ relationship: "Mamma", name: "Contatto", phone: "123456", email: "mamma@email.it" }])
-    const [assicurazionePagata, setAssicurazionePagata] = useState(true)
-    const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})*/
+  /*const [nomeGenitore, setNomeGenitore] = useState("Luca")
+  const [cognomeGenitore, setCognomeGenitore] = useState("Mondaini")
+  const [nome, setNome] = useState("Luca")
+  const [cognome, setCognome] = useState("Mondaini")
+  const [natoA, setNatoA] = useState("Cesena")
+  const [dataNascita, setDataNascita] = useState<Date>(new Date())
+  const [cittaResidenza, setCittaResidenza] = useState("Cesena")
+  const [viaResidenza, setViaResidenza] = useState("Via Fiorenzuola")
+  const [numeroResidenza, setNumeroResidenza] = useState("1107")
+  const [codiceFiscale, setCodiceFiscale] = useState("MNDLCU96P23C573M")
+  const [permessoAutonomo, setPermessoAutonomo] = useState(true)
+  const [deleghe, setDeleghe] = useState([{ name: "Delegato", phone: "123" }])
+  const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
+  const [contatti, setContatti] = useState([{ relationship: "Mamma", name: "Contatto", phone: "123456", email: "mamma@email.it" }])
+  const [assicurazionePagata, setAssicurazionePagata] = useState(true)
+  const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})*/
 
-    const [nomeGenitore, setNomeGenitore] = useState("")
-    const [cognomeGenitore, setCognomeGenitore] = useState("")
-    const [nome, setNome] = useState("")
-    const [cognome, setCognome] = useState("")
-    const [natoA, setNatoA] = useState("")
-    const [dataNascita, setDataNascita] = useState<Date>()
-    const [cittaResidenza, setCittaResidenza] = useState("")
-    const [viaResidenza, setViaResidenza] = useState("")
-    const [numeroResidenza, setNumeroResidenza] = useState("")
-    const [codiceFiscale, setCodiceFiscale] = useState("")
-    const [permessoAutonomo, setPermessoAutonomo] = useState(false)
-    const [deleghe, setDeleghe] = useState([{ name: "", phone: "" }])
-    const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
-    const [contatti, setContatti] = useState([{ relationship: "", name: "", phone: "", email: "" }])
-    const [assicurazionePagata, setAssicurazionePagata] = useState(false)
-    const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})
+  const [nomeGenitore, setNomeGenitore] = useState("")
+  const [cognomeGenitore, setCognomeGenitore] = useState("")
+  const [nome, setNome] = useState("")
+  const [cognome, setCognome] = useState("")
+  const [natoA, setNatoA] = useState("")
+  const [dataNascita, setDataNascita] = useState<Date>()
+  const [cittaResidenza, setCittaResidenza] = useState("")
+  const [viaResidenza, setViaResidenza] = useState("")
+  const [numeroResidenza, setNumeroResidenza] = useState("")
+  const [codiceFiscale, setCodiceFiscale] = useState("")
+  const [permessoAutonomo, setPermessoAutonomo] = useState(false)
+  const [deleghe, setDeleghe] = useState([{ name: "", phone: "" }])
+  const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
+  const [contatti, setContatti] = useState([{ relationship: "", name: "", phone: "", email: "" }])
+  const [assicurazionePagata, setAssicurazionePagata] = useState(false)
+  const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})
 
-    const periods = [
-      { week: 1, dates: "09/06 - 13/06" },
-      { week: 2, dates: "16/06 - 20/06" },
-      { week: 3, dates: "23/06 - 27/06" },
-      { week: 4, dates: "30/06 - 04/07" },
-      { week: 5, dates: "07/07 - 11/07" },
-      { week: 6, dates: "14/07 - 18/07" },
-      { week: 7, dates: "21/07 - 25/07" },
-      { week: 8, dates: "28/07 - 01/08" },
-      { week: 9, dates: "04/08 - 08/08" },
-      { week: 10, dates: "25/08 - 29/08" },
-      { week: 11, dates: "01/09 - 05/09" },
-    ]
-  
-    const handlePeriodChange = (weekId: string, period: string, checked: boolean) => {
-      const key = `${weekId}-${period}`
-      setPeriodo((prev) => ({
-        ...prev,
-        [key]: checked,
+  const periods = [
+    { week: 1, dates: "09/06 - 13/06" },
+    { week: 2, dates: "16/06 - 20/06" },
+    { week: 3, dates: "23/06 - 27/06" },
+    { week: 4, dates: "30/06 - 04/07" },
+    { week: 5, dates: "07/07 - 11/07" },
+    { week: 6, dates: "14/07 - 18/07" },
+    { week: 7, dates: "21/07 - 25/07" },
+    { week: 8, dates: "28/07 - 01/08" },
+    { week: 9, dates: "04/08 - 08/08" },
+    { week: 10, dates: "25/08 - 29/08" },
+    { week: 11, dates: "01/09 - 05/09" },
+  ]
+
+  const handlePeriodChange = (weekId: string, period: string, checked: boolean) => {
+    const key = `${weekId}-${period}`
+    setPeriodo((prev) => ({
+      ...prev,
+      [key]: checked,
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setMessaggio(null)
+
+    const form = e.currentTarget
+
+    try {
+      const { data: iscrizione, error: iscrizioneError } = await supabase.from("iscrizioni").insert([
+        {
+          nome_genitore: nomeGenitore,
+          cognome_genitore: cognomeGenitore,
+          nome: nome,
+          cognome: cognome,
+          nato_a: natoA,
+          data_nascita: dataNascita.toISOString().split("T")[0],
+          residenza_città: cittaResidenza,
+          residenza_via: viaResidenza,
+          residenza_numero: numeroResidenza,
+          codice_fiscale: codiceFiscale,
+          permesso_autonomo: permessoAutonomo,
+          assicurazione_pagata: assicurazionePagata
+        },
+      ]).select().single()
+
+      if (iscrizioneError) throw iscrizioneError
+
+      const iscrizione_id = iscrizione.id
+
+      const delegheToInsert = deleghe.map(d => ({
+        iscrizione_id,
+        nome_cognome: d.name,
+        recapito: d.phone,
       }))
-    }
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      setMessaggio(null)
+      const { error: delegheError } = await supabase.from('deleghe').insert(delegheToInsert)
 
-      const form = e.currentTarget
+      if (delegheError) throw delegheError
 
-      try {
-        const { data: iscrizione, error: iscrizioneError } = await supabase.from("iscrizioni").insert([
-          {
-            nome_genitore: nomeGenitore,
-            cognome_genitore: cognomeGenitore,
-            nome: nome,
-            cognome: cognome,
-            nato_a: natoA,
-            data_nascita: dataNascita.toISOString().split("T")[0],
-            residenza_città: cittaResidenza,
-            residenza_via: viaResidenza,
-            residenza_numero: numeroResidenza,
-            codice_fiscale: codiceFiscale,
-            permesso_autonomo: permessoAutonomo,
-            assicurazione_pagata: assicurazionePagata
-          },
-        ]).select().single()
+      const contattiToInsert = contatti.map(d => ({
+        iscrizione_id,
+        grado_parentela: d.relationship,
+        nome_cognome: d.name,
+        recapito: d.phone,
+        email: d.email
+      }))
 
-        if (iscrizioneError) throw iscrizioneError
+      const { error: contattiError } = await supabase.from('contatti').insert(contattiToInsert)
 
-        const iscrizione_id = iscrizione.id
+      if (contattiError) throw contattiError
 
-        const delegheToInsert = deleghe.map(d => ({
-          iscrizione_id,
-          nome_cognome: d.name,
-          recapito: d.phone,
-        }))
+      const settimane: Record<string, any> = {}
 
-        const { error: delegheError } = await supabase.from('deleghe').insert(delegheToInsert)
+      for (const [key, value] of Object.entries(periodo)) {
+        if (!value) continue
 
-        if (delegheError) throw delegheError
+        const dashIndex = key.indexOf('-')
+        const weekKey = key.slice(0, dashIndex)
+        const periodType = key.slice(dashIndex + 1)
 
-        const contattiToInsert = contatti.map(d => ({
-          iscrizione_id,
-          grado_parentela: d.relationship,
-          nome_cognome: d.name,
-          recapito: d.phone,
-          email: d.email
-        }))
-
-        const { error: contattiError } = await supabase.from('contatti').insert(contattiToInsert)
-
-        if (contattiError) throw contattiError
-
-        const settimane: Record<string, any> = {}
-
-        for (const [key, value] of Object.entries(periodo)) {
-          if (!value) continue
-        
-          const dashIndex = key.indexOf('-')
-          const weekKey = key.slice(0, dashIndex) 
-          const periodType = key.slice(dashIndex + 1)
-        
-          if (!settimane[weekKey]) {
-            settimane[weekKey] = {
-              mattina: false,
-              mattina_con_pranzo: false,
-              pomeriggio: false,
-              pomeriggio_con_pranzo: false,
-              giornata_intera: false,
-            }
-          }
-        
-          switch (periodType) {
-            case "morning":
-              settimane[weekKey].mattina = true
-              break
-            case "morning-lunch":
-              settimane[weekKey].mattina_con_pranzo = true
-              break
-            case "afternoon":
-              settimane[weekKey].pomeriggio = true
-              break
-            case "afternoon-lunch":
-              settimane[weekKey].pomeriggio_con_pranzo = true
-              break
-            case "full-day":
-              settimane[weekKey].giornata_intera = true
-              break
+        if (!settimane[weekKey]) {
+          settimane[weekKey] = {
+            mattina: false,
+            mattina_con_pranzo: false,
+            pomeriggio: false,
+            pomeriggio_con_pranzo: false,
+            giornata_intera: false,
           }
         }
-        
-        for (const [weekKey, periodi] of Object.entries(settimane)) {
-          const settimana = Number(weekKey.replace("week", ""))
-          const { error } = await supabase.from('periodi').insert({
-            iscrizione_id,
-            settimana,
-            ...periodi
-          })
-          if (error) throw error
+
+        switch (periodType) {
+          case "morning":
+            settimane[weekKey].mattina = true
+            break
+          case "morning-lunch":
+            settimane[weekKey].mattina_con_pranzo = true
+            break
+          case "afternoon":
+            settimane[weekKey].pomeriggio = true
+            break
+          case "afternoon-lunch":
+            settimane[weekKey].pomeriggio_con_pranzo = true
+            break
+          case "full-day":
+            settimane[weekKey].giornata_intera = true
+            break
         }
-
-
-  
-        setMessaggio({ type: "success", text: "Iscrizione completata con successo!" })
-        form.reset()
-        window.scrollTo({ top: 0, behavior: 'smooth' }) 
-        //setDeleghe([{ name: "", phone: "" }])
-        //setDataNascita(undefined)
-        //setPermessoAutonomo(false)
-      } catch (error) {
-        setMessaggio({ type: "error", text: `Errore durante l'iscrizione: ${error.message}` })
       }
-    }
 
-    const addDelegate = () => {
-      setDeleghe([...deleghe, { name: "", phone: "" }])
-    }
-
-    const removeDelegate = (index: number) => {
-      if (deleghe.length > 1) {
-        setDeleghe(deleghe.filter((_, i) => i !== index))
+      for (const [weekKey, periodi] of Object.entries(settimane)) {
+        const settimana = Number(weekKey.replace("week", ""))
+        const { error } = await supabase.from('periodi').insert({
+          iscrizione_id,
+          settimana,
+          ...periodi
+        })
+        if (error) throw error
       }
-    }
 
-    const updateDelegate = (index: number, field: "name" | "phone", value: string) => {
-      const updatedDelegates = deleghe.map((delegate, i) => (i === index ? { ...delegate, [field]: value } : delegate))
-      setDeleghe(updatedDelegates)
-    }
 
-    const addContact = () => {
-      setContatti([...contatti, { relationship: "", name: "", phone: "", email: "" }])
-    }
 
-    const removeContact = (index: number) => {
-      if (contatti.length > 1) {
-        setContatti(contatti.filter((_, i) => i !== index))
-      }
+      setMessaggio({ type: "success", text: "Iscrizione completata con successo!" })
+      form.reset()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } catch (error) {
+      setMessaggio({ type: "error", text: `Errore durante l'iscrizione: ${error.message}` })
     }
+  }
 
-    const updateContact = (index: number, field: "relationship" | "name" | "phone" | "email", value: string) => {
-      const updatedContacts = contatti.map((contact, i) => (i === index ? { ...contact, [field]: value } : contact))
-      setContatti(updatedContacts)
+  const addDelegate = () => {
+    setDeleghe([...deleghe, { name: "", phone: "" }])
+  }
+
+  const removeDelegate = (index: number) => {
+    if (deleghe.length > 1) {
+      setDeleghe(deleghe.filter((_, i) => i !== index))
     }
+  }
+
+  const updateDelegate = (index: number, field: "name" | "phone", value: string) => {
+    const updatedDelegates = deleghe.map((delegate, i) => (i === index ? { ...delegate, [field]: value } : delegate))
+    setDeleghe(updatedDelegates)
+  }
+
+  const addContact = () => {
+    setContatti([...contatti, { relationship: "", name: "", phone: "", email: "" }])
+  }
+
+  const removeContact = (index: number) => {
+    if (contatti.length > 1) {
+      setContatti(contatti.filter((_, i) => i !== index))
+    }
+  }
+
+  const updateContact = (index: number, field: "relationship" | "name" | "phone" | "email", value: string) => {
+    const updatedContacts = contatti.map((contact, i) => (i === index ? { ...contact, [field]: value } : contact))
+    setContatti(updatedContacts)
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
@@ -228,9 +225,8 @@ export default function Component() {
         {/* Messaggio */}
         {messaggio && (
           <div
-            className={`mb-4 p-4 rounded ${
-              messaggio.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
-            }`}
+            className={`mb-4 p-4 rounded ${messaggio.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+              }`}
           >
             {messaggio.text}
           </div>
@@ -278,7 +274,7 @@ export default function Component() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="birth-place">Nato/a a</Label>
-                <Input id="birth-place" placeholder="Città di nascita" value={natoA} onChange={(e) => setNatoA(e.target.value)}  required />
+                <Input id="birth-place" placeholder="Città di nascita" value={natoA} onChange={(e) => setNatoA(e.target.value)} required />
               </div>
               <div className="space-y-2">
                 <Label>Data di nascita</Label>
@@ -347,94 +343,152 @@ export default function Component() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 p-2 text-sm font-medium">SETT.</th>
-                      <th className="border border-gray-300 p-2 text-sm font-medium">DATE</th>
-                      <th className="border border-gray-300 p-2 text-sm font-medium">
-                        MATTINA
-                        <br />
-                        <span className="text-xs">7:30/12:30</span>
-                      </th>
-                      <th className="border border-gray-300 p-2 text-sm font-medium">
-                        MATTINA CON
-                        <br />
-                        PRANZO
-                        <br />
-                        <span className="text-xs">7:30/14:00</span>
-                      </th>
-                      <th className="border border-gray-300 p-2 text-sm font-medium">
-                        POMERIGGIO
-                        <br />
-                        <span className="text-xs">14:00/18:00</span>
-                      </th>
-                      <th className="border border-gray-300 p-2 text-sm font-medium">
-                        POMERIGGIO CON
-                        <br />
-                        PRANZO
-                        <br />
-                        <span className="text-xs">12:30/18:00</span>
-                      </th>
-                      <th className="border border-gray-300 p-2 text-sm font-medium">
-                        GIORNATA
-                        <br />
-                        INTERA
-                        <br />
-                        <span className="text-xs">7:30/18:00</span>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {periods.map((period) => (
-                      <tr key={period.week} className="hover:bg-gray-50">
-                        <td className="border border-gray-300 p-2 text-center font-medium">{period.week}</td>
-                        <td className="border border-gray-300 p-2 text-center text-sm">{period.dates}</td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          <Checkbox
-                            checked={periodo[`week${period.week}-morning`] || false}
-                            onCheckedChange={(checked) =>
-                              handlePeriodChange(`week${period.week}`, "morning", checked as boolean)
-                            }
-                          />
-                        </td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          <Checkbox
-                            checked={periodo[`week${period.week}-morning-lunch`] || false}
-                            onCheckedChange={(checked) =>
-                              handlePeriodChange(`week${period.week}`, "morning-lunch", checked as boolean)
-                            }
-                          />
-                        </td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          <Checkbox
-                            checked={periodo[`week${period.week}-afternoon`] || false}
-                            onCheckedChange={(checked) =>
-                              handlePeriodChange(`week${period.week}`, "afternoon", checked as boolean)
-                            }
-                          />
-                        </td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          <Checkbox
-                            checked={periodo[`week${period.week}-afternoon-lunch`] || false}
-                            onCheckedChange={(checked) =>
-                              handlePeriodChange(`week${period.week}`, "afternoon-lunch", checked as boolean)
-                            }
-                          />
-                        </td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          <Checkbox
-                            checked={periodo[`week${period.week}-full-day`] || false}
-                            onCheckedChange={(checked) =>
-                              handlePeriodChange(`week${period.week}`, "full-day", checked as boolean)
-                            }
-                          />
-                        </td>
+              <div className="md:block hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse border border-gray-300">
+                    <thead>
+                      <tr className="bg-gray-100">
+                        <th className="border border-gray-300 p-2 text-sm font-medium">SETT.</th>
+                        <th className="border border-gray-300 p-2 text-sm font-medium">DATE</th>
+                        <th className="border border-gray-300 p-2 text-sm font-medium">
+                          MATTINA
+                          <br />
+                          <span className="text-xs">7:30/12:30</span>
+                        </th>
+                        <th className="border border-gray-300 p-2 text-sm font-medium">
+                          MATTINA CON
+                          <br />
+                          PRANZO
+                          <br />
+                          <span className="text-xs">7:30/14:00</span>
+                        </th>
+                        <th className="border border-gray-300 p-2 text-sm font-medium">
+                          POMERIGGIO
+                          <br />
+                          <span className="text-xs">14:00/18:00</span>
+                        </th>
+                        <th className="border border-gray-300 p-2 text-sm font-medium">
+                          POMERIGGIO CON
+                          <br />
+                          PRANZO
+                          <br />
+                          <span className="text-xs">12:30/18:00</span>
+                        </th>
+                        <th className="border border-gray-300 p-2 text-sm font-medium">
+                          GIORNATA
+                          <br />
+                          INTERA
+                          <br />
+                          <span className="text-xs">7:30/18:00</span>
+                        </th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {periods.map((period) => (
+                        <tr key={period.week} className="hover:bg-gray-50">
+                          <td className="border border-gray-300 p-2 text-center font-medium">{period.week}</td>
+                          <td className="border border-gray-300 p-2 text-center text-sm">{period.dates}</td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            <Checkbox
+                              checked={periodo[`week${period.week}-morning`] || false}
+                              onCheckedChange={(checked) =>
+                                handlePeriodChange(`week${period.week}`, "morning", checked as boolean)
+                              }
+                            />
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            <Checkbox
+                              checked={periodo[`week${period.week}-morning-lunch`] || false}
+                              onCheckedChange={(checked) =>
+                                handlePeriodChange(`week${period.week}`, "morning-lunch", checked as boolean)
+                              }
+                            />
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            <Checkbox
+                              checked={periodo[`week${period.week}-afternoon`] || false}
+                              onCheckedChange={(checked) =>
+                                handlePeriodChange(`week${period.week}`, "afternoon", checked as boolean)
+                              }
+                            />
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            <Checkbox
+                              checked={periodo[`week${period.week}-afternoon-lunch`] || false}
+                              onCheckedChange={(checked) =>
+                                handlePeriodChange(`week${period.week}`, "afternoon-lunch", checked as boolean)
+                              }
+                            />
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            <Checkbox
+                              checked={periodo[`week${period.week}-full-day`] || false}
+                              onCheckedChange={(checked) =>
+                                handlePeriodChange(`week${period.week}`, "full-day", checked as boolean)
+                              }
+                            />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="md:hidden space-y-4">
+                {/* Lista card per mobile */}
+                {periods.map((period) => (
+                  <div key={period.week} className="border border-gray-300 rounded-md p-4 shadow-sm bg-white">
+                    <div><strong>Settimana:</strong> {period.week}</div>
+                    <div><strong>Date:</strong> {period.dates}</div>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <label className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={periodo[`week${period.week}-morning`] || false}
+                          onCheckedChange={(checked) =>
+                            handlePeriodChange(`week${period.week}`, "morning", checked as boolean)
+                          }
+                        />
+                        <span>MATTINA (7:30/12:30)</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={periodo[`week${period.week}-morning-lunch`] || false}
+                          onCheckedChange={(checked) =>
+                            handlePeriodChange(`week${period.week}`, "morning-lunch", checked as boolean)
+                          }
+                        />
+                        <span>MATTINA CON PRANZO (7:30/14:00)</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={periodo[`week${period.week}-afternoon`] || false}
+                          onCheckedChange={(checked) =>
+                            handlePeriodChange(`week${period.week}`, "afternoon", checked as boolean)
+                          }
+                        />
+                        <span>POMERIGGIO (14:00/18:00)</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={periodo[`week${period.week}-afternoon-lunch`] || false}
+                          onCheckedChange={(checked) =>
+                            handlePeriodChange(`week${period.week}`, "afternoon-lunch", checked as boolean)
+                          }
+                        />
+                        <span>POMERIGGIO CON PRANZO (12:30/18:00)</span>
+                      </label>
+                      <label className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={periodo[`week${period.week}-full-day`] || false}
+                          onCheckedChange={(checked) =>
+                            handlePeriodChange(`week${period.week}`, "full-day", checked as boolean)
+                          }
+                        />
+                        <span>GIORNATA INTERA (7:30/18:00)</span>
+                      </label>
+                    </div>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
