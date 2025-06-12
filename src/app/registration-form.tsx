@@ -19,20 +19,20 @@ import "react-datepicker/dist/react-datepicker.css"
 
 
 export default function Component() {
-  /*const [nomeGenitore, setNomeGenitore] = useState("Luca")
-  const [cognomeGenitore, setCognomeGenitore] = useState("Mondaini")
-  const [nome, setNome] = useState("Luca")
-  const [cognome, setCognome] = useState("Mondaini")
+  /*const [nomeGenitore, setNomeGenitore] = useState("Nome Genitore")
+  const [cognomeGenitore, setCognomeGenitore] = useState("Cognome Genitore")
+  const [nome, setNome] = useState("Nome Ragazzo")
+  const [cognome, setCognome] = useState("Cognome Ragazzo")
   const [natoA, setNatoA] = useState("Cesena")
   const [dataNascita, setDataNascita] = useState<Date>(new Date())
   const [cittaResidenza, setCittaResidenza] = useState("Cesena")
-  const [viaResidenza, setViaResidenza] = useState("Via Fiorenzuola")
-  const [numeroResidenza, setNumeroResidenza] = useState("1107")
-  const [codiceFiscale, setCodiceFiscale] = useState("MNDLCU96P23C573M")
+  const [viaResidenza, setViaResidenza] = useState("Via Prova")
+  const [numeroResidenza, setNumeroResidenza] = useState("11")
+  const [codiceFiscale, setCodiceFiscale] = useState("AAAAAA00A00A000A")
   const [permessoAutonomo, setPermessoAutonomo] = useState(true)
-  const [deleghe, setDeleghe] = useState([{ name: "Delegato", phone: "123" }])
+  const [deleghe, setDeleghe] = useState([{ name: "Nome Delegato", phone: "123" }])
   const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
-  const [contatti, setContatti] = useState([{ relationship: "Mamma", name: "Contatto", phone: "123456", email: "mamma@email.it" }])
+  const [contatti, setContatti] = useState([{ relationship: "Nome Relazione", name: "Nome Contatto", phone: "123456", email: "contatto@email.it" }])
   const [assicurazionePagata, setAssicurazionePagata] = useState(true)
   const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})*/
 
@@ -216,6 +216,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="mx-auto max-w-4xl">
+
         {/* Header */}
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">Iscrizione Utente</h1>
@@ -233,6 +234,7 @@ export default function Component() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
+
           {/* Dati Genitore */}
           <Card>
             <CardHeader>
@@ -261,7 +263,7 @@ export default function Component() {
                 <User className="h-5 w-5" />
                 Dati Ragazzo/a
               </CardTitle>
-              <CardDescription>Inserisci i dati del minore da iscrivere</CardDescription>
+              <CardDescription>Inserisci i dati del ragazzo da iscrivere</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
@@ -303,7 +305,7 @@ export default function Component() {
                 <Input id="city" placeholder="Inserisci la città" value={cittaResidenza} onChange={(e) => setCittaResidenza(e.target.value)} required />
               </div>
               <div className="space-y-2 md:col-span-2">
-                <Label htmlFor="street">Via</Label>
+                <Label htmlFor="street">In</Label>
                 <Input id="street" placeholder="Inserisci via/piazza" value={viaResidenza} onChange={(e) => setViaResidenza(e.target.value)} required />
               </div>
               <div className="space-y-2">
@@ -318,6 +320,7 @@ export default function Component() {
               </div>
             </CardContent>
           </Card>
+
           {/* Selezione Periodi */}
           <Card>
             <CardHeader>
@@ -325,7 +328,7 @@ export default function Component() {
                 <Clock className="h-5 w-5" />
                 Per il periodo (barrare le caselle di interesse)
               </CardTitle>
-              <CardDescription className="flex items-center justify-between">
+              <CardDescription className="flex flex-wrap items-center justify-between">
                 <span>Seleziona i periodi e gli orari desiderati</span>
                 <div className="flex items-center gap-2">
                   <span className="font-semibold">ASSICURAZIONE 20€</span>
@@ -434,8 +437,9 @@ export default function Component() {
                   </table>
                 </div>
               </div>
+
+              {/* Lista card per mobile */}
               <div className="md:hidden space-y-4">
-                {/* Lista card per mobile */}
                 {periods.map((period) => (
                   <div key={period.week} className="border border-gray-300 rounded-md p-4 shadow-sm bg-white">
                     <div><strong>Settimana:</strong> {period.week}</div>
@@ -571,6 +575,7 @@ export default function Component() {
               </Button>
             </CardContent>
           </Card>
+
           {/* Deleghe per il ritiro */}
           <Card>
             <CardHeader>
