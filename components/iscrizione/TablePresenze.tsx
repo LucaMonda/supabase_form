@@ -19,6 +19,27 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
     { week: 11, dates: "01/09 - 05/09" },
   ]
 
+  const isDisabled = (dateRange: string) => {
+    // Estrai la data di inizio (prima data della stringa "gg/mm - gg/mm")
+    const startDateString = dateRange.split(" - ")[0] // es. "09/06"
+    const [day, month] = startDateString.split("/").map(Number)
+
+    const today = new Date()
+    const currentYear = today.getFullYear()
+
+    // Crea la data di inizio settimana con anno corrente
+    const startDate = new Date(currentYear, month - 1, day)
+
+    // Calcola la differenza in millisecondi tra startDate e oggi
+    const diffTime = startDate.getTime() - today.getTime()
+
+    // Converti la differenza in giorni
+    const diffDays = diffTime / (1000 * 60 * 60 * 24)
+
+    // Se siamo a 14 giorni (2 settimane) o meno dall'inizio, disabilita
+    return diffDays <= 14
+  }
+
   return (<Card>
     <CardHeader>
       <CardTitle className="flex items-center gap-2">
@@ -90,6 +111,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
                   <td className="border border-gray-300 p-2 text-center text-sm">{period.dates}</td>
                   <td className="border border-gray-300 p-2 text-center">
                     <Checkbox
+                      disabled={isDisabled(period.dates)}
                       checked={periodo[`week${period.week}-morning`] || false}
                       onCheckedChange={(checked) =>
                         handlePeriodChange(`week${period.week}`, "morning", checked as boolean)
@@ -98,6 +120,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
                   </td>
                   <td className="border border-gray-300 p-2 text-center">
                     <Checkbox
+                      disabled={isDisabled(period.dates)}
                       checked={periodo[`week${period.week}-morning-lunch`] || false}
                       onCheckedChange={(checked) =>
                         handlePeriodChange(`week${period.week}`, "morning-lunch", checked as boolean)
@@ -106,6 +129,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
                   </td>
                   <td className="border border-gray-300 p-2 text-center">
                     <Checkbox
+                      disabled={isDisabled(period.dates)}
                       checked={periodo[`week${period.week}-afternoon`] || false}
                       onCheckedChange={(checked) =>
                         handlePeriodChange(`week${period.week}`, "afternoon", checked as boolean)
@@ -114,6 +138,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
                   </td>
                   <td className="border border-gray-300 p-2 text-center">
                     <Checkbox
+                      disabled={isDisabled(period.dates)}
                       checked={periodo[`week${period.week}-afternoon-lunch`] || false}
                       onCheckedChange={(checked) =>
                         handlePeriodChange(`week${period.week}`, "afternoon-lunch", checked as boolean)
@@ -122,6 +147,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
                   </td>
                   <td className="border border-gray-300 p-2 text-center">
                     <Checkbox
+                      disabled={isDisabled(period.dates)}
                       checked={periodo[`week${period.week}-full-day`] || false}
                       onCheckedChange={(checked) =>
                         handlePeriodChange(`week${period.week}`, "full-day", checked as boolean)
@@ -144,6 +170,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
             <div className="flex flex-wrap gap-2 mt-2">
               <label className="flex items-center space-x-2">
                 <Checkbox
+                  disabled={isDisabled(period.dates)}
                   checked={periodo[`week${period.week}-morning`] || false}
                   onCheckedChange={(checked) =>
                     handlePeriodChange(`week${period.week}`, "morning", checked as boolean)
@@ -153,6 +180,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
               </label>
               <label className="flex items-center space-x-2">
                 <Checkbox
+                  disabled={isDisabled(period.dates)}
                   checked={periodo[`week${period.week}-morning-lunch`] || false}
                   onCheckedChange={(checked) =>
                     handlePeriodChange(`week${period.week}`, "morning-lunch", checked as boolean)
@@ -162,6 +190,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
               </label>
               <label className="flex items-center space-x-2">
                 <Checkbox
+                  disabled={isDisabled(period.dates)}
                   checked={periodo[`week${period.week}-afternoon`] || false}
                   onCheckedChange={(checked) =>
                     handlePeriodChange(`week${period.week}`, "afternoon", checked as boolean)
@@ -171,6 +200,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
               </label>
               <label className="flex items-center space-x-2">
                 <Checkbox
+                  disabled={isDisabled(period.dates)}
                   checked={periodo[`week${period.week}-afternoon-lunch`] || false}
                   onCheckedChange={(checked) =>
                     handlePeriodChange(`week${period.week}`, "afternoon-lunch", checked as boolean)
@@ -180,6 +210,7 @@ export const TablePresenze = ({ assicurazionePagata, setAssicurazionePagata, per
               </label>
               <label className="flex items-center space-x-2">
                 <Checkbox
+                  disabled={isDisabled(period.dates)}
                   checked={periodo[`week${period.week}-full-day`] || false}
                   onCheckedChange={(checked) =>
                     handlePeriodChange(`week${period.week}`, "full-day", checked as boolean)
