@@ -15,7 +15,7 @@ import { Delega } from "@/components/iscrizione/Delega"
 import { PermessoAutonomo } from "@/components/iscrizione/PermessoAutonomo"
 
 export default function Component() {
-  const [nomeGenitore, setNomeGenitore] = useState("Nome Genitore")
+  /*const [nomeGenitore, setNomeGenitore] = useState("Nome Genitore")
   const [cognomeGenitore, setCognomeGenitore] = useState("Cognome Genitore")
   const [nome, setNome] = useState("Nome Ragazzo")
   const [cognome, setCognome] = useState("Cognome Ragazzo")
@@ -30,9 +30,9 @@ export default function Component() {
   const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
   const [contatti, setContatti] = useState([{ relationship: "Nome Relazione", name: "Nome Contatto", phone: "123456", email: "contatto@email.it" }])
   const [assicurazionePagata, setAssicurazionePagata] = useState(true)
-  const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})
+  const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})*/
 
-  /*const [nomeGenitore, setNomeGenitore] = useState("")
+  const [nomeGenitore, setNomeGenitore] = useState("")
   const [cognomeGenitore, setCognomeGenitore] = useState("")
   const [nome, setNome] = useState("")
   const [cognome, setCognome] = useState("")
@@ -47,7 +47,7 @@ export default function Component() {
   const [messaggio, setMessaggio] = useState<{ type: "success" | "error"; text: string } | null>(null)
   const [contatti, setContatti] = useState([{ relationship: "", name: "", phone: "", email: "" }])
   const [assicurazionePagata, setAssicurazionePagata] = useState(false)
-  const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})*/
+  const [periodo, setPeriodo] = useState<{ [key: string]: boolean }>({})
 
   const handlePeriodChange = (weekId: string, period: string, checked: boolean) => {
     const key = `${weekId}-${period}`
